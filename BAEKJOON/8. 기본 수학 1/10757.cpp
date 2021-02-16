@@ -17,7 +17,7 @@ int main(void) {
 		result = addStr(A, B);
 	}
 	else {
-		result = addStr(B, B);
+		result = addStr(B, A);
 	}
 
 	cout << result;
@@ -34,7 +34,7 @@ char itoa(int num) {
 }
 
 string addStr(string str1, string str2) {
-	
+
 	string result = "";
 	int temp = 0;	//str1과 str2의 i번째 자리의 합을 저장할 변수
 	int temp1 = 0;	//만약 temp가 10 이상일 때 10을 저장할 변수
@@ -43,59 +43,24 @@ string addStr(string str1, string str2) {
 
 		if (i >= str2.length()) {	//str2가 더 이상 연산에 참여하지 않으면
 			temp = atoi(str1[str1.length() - 1 - i]) + temp1;
-			temp1 = 0;
 		}
 		else {
 			temp = atoi(str1[str1.length() - 1 - i])
 				+ atoi(str2[str2.length() - 1 - i]) + temp1;
+		}
+
+		if (temp >= 10) {
+			temp -= 10;
+			temp1 = 1;
+		}
+		else {
 			temp1 = 0;
 		}
 
-		if (temp > 9) {	//temp가 두 자리수면 
-
-			int j = i;
-			while (true) {
-				j++;
-				if (j + 1 == str1.length()) {
-
-				}
-				else {
-					str1[str1.length() - 1 - j] += 1;
-				}
-			}
-
-
-
-
-
-			if (i + 1 == str1.length()) {	//현재 연산하는 자리수가 str1의 자리수랑 같으면
-				result = "1" + itoa(temp - 10) + result;
-			}
-
-
-
-			else {
-				result = itoa(temp - 10) + result;
-
-				int j = i;
-				while (true) {	//조건 하나 더 추가하자
-					if (str1[str1.length() - 1 - j] != '9') {
-						str1[str1.length() - 1 - j] += 1;
-					}
-					else {
-						j++;
-					}
-				}
-			}
-		}
-
-
-
-
-
-		else {	//temp가 1자리 수면
-			result = itoa(temp) + result;
-			temp1 = 0;
+		result = itoa(temp) + result;
+		
+		if (i == str1.length() - 1 && temp1 == 1) {
+			result = itoa(1) + result;
 		}
 	}
 

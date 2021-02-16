@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int babylonian(int distance);
+int babylonian(long long distance);
 
 int main(void) {
 
@@ -10,9 +10,9 @@ int main(void) {
 
 	for (int i = 0; i < T; i++) {
 
-		int x, y;	//현재 위치, 목표 위치
+		long long x, y;	//현재 위치, 목표 위치
 		cin >> x >> y;
-		int distance = y - x;
+		long long distance = y - x;
 
 		int count = 0;	//이동 횟수
 
@@ -25,7 +25,7 @@ int main(void) {
 		if (left > n) {
 			count += 2;
 		}
-		else if (left <= n && left > 0) {
+		else if (left > 0) {
 			count += 1;
 		}
 		
@@ -35,9 +35,9 @@ int main(void) {
 	return 0;
 }
 
-int babylonian(int distance) {
-	int x = distance;
-	int y = 1;
+int babylonian(long long distance) {
+	long long x = distance;
+	long long y = 1;
 	while (x > y) {
 		x = (x + y) / 2;
 		y = distance / x;
