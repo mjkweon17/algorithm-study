@@ -1,6 +1,11 @@
 #include <iostream>
-#include <cmath>
 using namespace std;
+
+int N;
+int S;
+int arr[21];
+int cnt;	//부분수열의 개수
+int sum;
 
 void init() {
 	ios::sync_with_stdio(NULL);
@@ -8,38 +13,26 @@ void init() {
 	cout.tie(NULL);
 }
 
-int n, s;	//n: 수열에 있는 정수의 개수, s: 더한 값
-int cnt = 0;	//조건을 만족하는 부분 수열의 개수
+void func(int k) {
+	if (k == N) return;
 
-int arr[20];
-bool isused[20];
+	sum += arr[k];
+	if (sum == S) cnt++;
+	func(k + 1);
+	sum -= arr[k];
 
-void func(int sum, int k) {
-	if (sum == s) {
-		cnt++;
-		return;
-	}
-
-	for (int i = 0; i < n; i++) {
-		if (isused[i]) continue;
-
-		if(abs(arr[i] + sum - s))
-
-	}
-
+	func(k + 1);
 }
 
 int main(void) {
 
-	init();
+	cin >> N >> S;
 
-	cin >> n >> s;
-
-	for (int i = 0; i < n; i++) {
+	for (int i = 0; i < N; i++) {
 		cin >> arr[i];
 	}
 
-	func(0, 0);
+	func(0);
 
 	cout << cnt;
 
