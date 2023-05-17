@@ -2,6 +2,7 @@
 import sys
 
 count = int(sys.stdin.readline())
+
 data = []
 for i in range(count):
     data.append(sum(map(int, sys.stdin.readline().split())))
