@@ -1,0 +1,1 @@
+graph = [[] for _ in range]
