@@ -1,10 +1,4 @@
-rows = 10
-cols = 5
-arr = [[0 for _ in range(cols)] for _ in range(rows)]
-
-rows = 10
-cols = 5
-arr = [[0] * cols] * rows
-
-
-
+li = [0 for _ in range(10)]
+for i in li:
+    i = 10
+print(li)
