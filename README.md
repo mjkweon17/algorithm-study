@@ -1,0 +1,10 @@
+### 2023_Python_Study
+[00. tenchniques](2023_Python_Study/00.%20tenchniques.md)
+[01. string handling](2023_Python_Study/01.%20string%20handling.md)
+[02. data structures](2023_Python_Study/02.%20data%20structures.md)
+[03. list comprehension](2023_Python_Study/03.%20list%20comprehension.md)
+[04. error handling](2023_Python_Study/04.%20error%20handling.md)
+[05. built-in functions](2023_Python_Study/05.%20built-in%20functions.md)
+[07. time complexity](2023_Python_Study/07.%20time%20complexity.md)
+[11. lambda function](2023_Python_Study/11.%20lambda%20function.md)
+[12. 파이썬 꿀팁](2023_Python_Study/12.%20파이썬%20꿀팁.md)
