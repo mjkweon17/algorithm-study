@@ -1,2 +1,3 @@
-print(dir(len))  # List attributes and methods of the len function
-import math
+expression = input("Enter a mathematical expression: ")
+result = eval(expression)
+print(f"The result of the expression is {result}.")
