@@ -1,3 +1,1 @@
-my_list = [1, 2, 3, "hello", True]
-my_list.remove(4)
-print(my_list)
+squares = [x**2 for x in range(1, 6)]
